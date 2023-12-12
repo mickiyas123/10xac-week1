@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: postgres_week_one
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: week_one
+    ports:
+      - "5439:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - dev
+
+networks:
+  dev:
+
+volumes:
+  db-data:
+
